@@ -7,7 +7,7 @@
         www:
           image: eboraas/apache-php
           ports:
-            - "8787:80"
+            - "{{ item.src_port }}:{{ item.dst_port }}"
           volumes:
             - /opt/widgetnewscms:/var/www/html/
           depends_on:
@@ -26,6 +26,7 @@
           networks:
             - default
   register: output
+  with_items: "{{ app }}"  
 
 - name: Debug
   debug:
