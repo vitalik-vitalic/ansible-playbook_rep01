@@ -13,3 +13,6 @@ apt_needle_packages:
 app_repo: "https://github.com/vitalik-vitalic/widgetnewscms.git"
 
 ansible_python_interpreter: /usr/bin/python3.6
+
+app_fqdn: "widgetnewscms.example.com"
+app_port: "7878"
