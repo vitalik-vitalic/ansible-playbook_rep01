@@ -1,4 +1,4 @@
-- name: Run with inline v1 compose
+- name: Run docker-compose 
   docker_compose:
     project_name: cms
     definition:
