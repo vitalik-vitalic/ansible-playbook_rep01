@@ -1,0 +1,7 @@
+app_db_host: "db"
+app_db_name: "cmsexample"
+app_db_user: "root"
+app_db_pass: "jumperMysqlUserPass2020!"
+app_repo: "https://github.com/vitalik-vitalic/widgetnewscms"
+app_home: /opt/widgetnewscms
+app_fqdn: "widgetnewscms.example.com"

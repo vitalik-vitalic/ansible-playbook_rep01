@@ -1,0 +1,26 @@
+- name: Redmine. Clone repository
+  git:
+    repo: "{{ app_repo }}"
+    dest: "{{ app_home }}"
+    update: yes
+    accept_hostkey: yes
+    force: yes
+    version: master    
+
+- name: Config database
+  template:
+    src: database.yml.j2
+    dest: "{{ app_home }}/config.php"
+  tags:
+    - db::config
+
+#- name: Import database data
+#  mysql_db:
+#    login_user="{{ db_user }}"
+#    login_password="{{ db_pass }}"
+#    name="{{ app_db_name }}"    
+#    state=import
+#    target={{ app_home }}/CMSExample.sql
+#  tags:
+#    - db::import
+#  when: db_created.changed

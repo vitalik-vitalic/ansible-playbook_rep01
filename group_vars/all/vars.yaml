@@ -1,0 +1,15 @@
+apt_needle_packages:
+  - git
+  - build-essential
+  - libssl-dev
+  - libmysqlclient-dev
+#  - apache2
+#  - mysql-server
+#  - mysql-server
+#  - mysql-client
+  - python-mysqldb
+  - libmysqlclient-dev
+
+app_repo: "https://github.com/vitalik-vitalic/widgetnewscms.git"
+
+ansible_python_interpreter: /usr/bin/python3.6
