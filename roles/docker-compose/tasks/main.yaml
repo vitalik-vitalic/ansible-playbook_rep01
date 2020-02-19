@@ -1,4 +1,4 @@
-- name: Run with inline v1 compose
+- name: Run docker-compose 
   docker_compose:
     project_name: cms
     definition:
@@ -7,7 +7,11 @@
         www:
           image: eboraas/apache-php
           ports:
+<<<<<<< HEAD
             - "{{ item.src_port }}:{{ item.dst_port }}"
+=======
+            - "7878:80"
+>>>>>>> 2970759fbd2d7746bf44f54b41e7da5df0ab7251
           volumes:
             - /opt/widgetnewscms:/var/www/html/
           depends_on:

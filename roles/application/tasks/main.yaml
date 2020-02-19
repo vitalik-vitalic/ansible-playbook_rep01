@@ -1,4 +1,4 @@
-- name: Redmine. Clone repository
+- name: WidgetNews. Clone repository
   git:
     repo: "{{ app_repo }}"
     dest: "{{ app_home }}"
