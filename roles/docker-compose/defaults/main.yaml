@@ -3,5 +3,3 @@ app_home: "/opt/widgetnewscms"
 app_fqdn: "widgetnewscms.example.com"
 app_port: "7878"
 
-- app:
-  - {src_port: 7878, dst_port: 80} 

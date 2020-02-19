@@ -7,6 +7,7 @@
     - application
     - docker-compose
 
+  tasks:
     - name: "Add {{ app_fqdn }} to host file"
       shell: echo "127.0.0.1       {{ app_fqdn }}" >> /etc/hosts
       tags:
