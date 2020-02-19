@@ -7,7 +7,7 @@
         www:
           image: eboraas/apache-php
           ports:
-            - "8787:80"
+            - "7878:80"
           volumes:
             - /opt/widgetnewscms:/var/www/html/
           depends_on:
