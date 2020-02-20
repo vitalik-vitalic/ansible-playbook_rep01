@@ -36,3 +36,5 @@
             channel: "errors"
             username: "webhook"
             parse: "full"      
+        - name: Import rollback playbook tasks
+          include_tasks: rollback.yaml

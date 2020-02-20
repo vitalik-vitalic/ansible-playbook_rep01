@@ -1,0 +1,10 @@
+---
+- name: Delete All docker images
+  shell: docker stop -t 0 $(docker ps -qa) && docker rm -f $(docker ps -qa) && docker rmi -f $(docker images -qa)
+  args:
+    executable: /bin/bash
+
+- name: Remove project directory
+  file:
+    path: /opt/widgetnewscms
+    state: absent
