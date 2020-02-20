@@ -15,7 +15,7 @@
         
     # Pause for 40 seconds to run mysql db on first deploy.
     - pause:
-      seconds: 40
+        seconds: 40
     
     - uri:
         url: "http://{{ app_fqdn }}:{{ app_port }}"
