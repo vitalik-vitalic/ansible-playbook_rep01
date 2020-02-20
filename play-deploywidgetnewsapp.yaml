@@ -12,7 +12,11 @@
       shell: echo "127.0.0.1       {{ app_fqdn }}" >> /etc/hosts
       tags:
         - test
-
+        
+    # Pause for 40 seconds to run mysql db on first deploy.
+    - pause:
+      seconds: 40
+    
     - uri:
         url: "http://{{ app_fqdn }}:{{ app_port }}"
         return_content: yes
