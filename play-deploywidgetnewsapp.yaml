@@ -16,11 +16,23 @@
     # Pause for 40 seconds to run mysql db on first deploy.
     - pause:
         seconds: 40
-    
-    - uri:
-        url: "http://{{ app_fqdn }}:{{ app_port }}"
-        return_content: yes
-      register: this
-      failed_when: "'Widget News &copy; 2011. All rights reserved' not in this.content"
+
+    - name: Checks if App is works correctly
+      block:
+        - name: Checks if it works       
+          uri:
+            url: "http://{{ item.fqdn }}:{{ item.port }}"
+            return_content: yes
+          register: this
+          with_items: "{{ app }}"
+          failed_when: "'Widget News &copy; 2011. All rights reserved' not in this.content"
       tags:
         - test
+      rescue:
+        - name: Send notofication to Slack
+          slack:
+            token: TFBPBNB2L/BRQJATF9R/2zbm0nl8LNNtDszgOh4u7CF5
+            msg: "App content not found"
+            channel: "errors"
+            username: "webhook"
+            parse: "full"      

@@ -1,11 +1,12 @@
 - name: Run docker-compose 
+  become: yes
   docker_compose:
     project_name: cms
     definition:
       version: "3"
       services:
         www:
-          image: eboraas/apache-php
+          image: eboraas/apache-php:latest
           ports:
             - "7878:80"
           volumes:
@@ -31,8 +32,8 @@
   debug:
     var: output
 
-- name: Assert
-  assert:
-    that:
-      - "www.cms_www_1.state.running"
-      - "db.cms_db_1.state.running"
+#- name: Assert
+#  assert:
+#    that:
+#      - "www.cms_www_1.state.running"
+#      - "db.cms_db_1.state.running"

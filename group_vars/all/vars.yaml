@@ -16,3 +16,6 @@ ansible_python_interpreter: /usr/bin/python3.6
 
 app_fqdn: "widgetnewscms.example.com"
 app_port: "7878"
+
+app:
+- { fqdn: "widgetnewscms.example.com" , port: "7878"}
