@@ -25,7 +25,7 @@
             return_content: yes
           register: this
           with_items: "{{ app }}"
-          failed_when: "'11Widget News &copy; 2011. All rights reserved' not in this.content"
+          failed_when: "'Widget News &copy; 2011. All rights reserved' not in this.content"
       tags:
         - test
       rescue:
